@@ -1,0 +1,41 @@
+# GLOBAL SUPERSTORE DATASET
+
+## SALES AND PROFIT DASHBOARD IN EXCEL
+
+### Introduction 
+Superstores operate at a wide range of scales, from small retailers to large multinational chains, offering diverse products at competitive prices to customers around the world. To stay competitive and make strategic decisions, it’s crucial for these businesses to continuously track and evaluate key performance indicators (KPIs).\
+This project uses the Global Superstore Sales dataset, publicly available on Kaggle. The dataset includes transaction-level information across three product categories—Furniture, Office Supplies, and Technology—and three customer segments: Consumer, Corporate, and Home Office. These sales span multiple regions, providing a rich foundation for exploratory and analytical insights.
+
+### Objectives
+This portfolio project focuses on two core objectives:\
+Task 1: Clean, transform, and analyze the dataset to prepare it for meaningful exploration.\
+Task 2: Discover valuable and unexpected insights that address real business questions and support data‑driven recommendations.
+
+### STEP1:
+The dataset contains 3 sheets: Orders, People and Returned Items. The sheets name People and Returned items have been merged using the VLOOKUP formula.
+
+### STEP2:
+In this task, data is being checked for null values and duplicate records. In Excel, both these tasks can be accomplished using ready functions available.\
+For checking duplicate entries, we need to navigate to Data tab and click on "Remove Duplicates", which shall prompt how many entries were duplicated. In this dataset, there were no duplicate entries were found.
+
+
+For checking NULL values, we need to use GO TO SPECIAL tab on the Home page under Find & Select tab. In this dataset, no records were found to be Null. \
+However, there were blanks in Postal Code and the codes were available for only a fraction of data, this column is best deleted.
+
+### STEP3:
+Further, new column 'Year' , 'Month', 'Month_name' are added from the Order Date column to aid in analysis on yearly basis.\
+New Column : LOSS is added to the data to replace the negative Profit.\
+Remove columns: Postal Code and Row Number
+
+The data is now ready for the Questions.
+
+## Business Questions
+
+Q1: Which segment is the bestseller?\
+Q2: Analysing sales profit by each Category over the years.\
+Q3: Which region has the highest order count and in which region do we need to grow our Business?\
+Q4: Analysing the data by Country.\
+Q5: What are the top 10 most selling Products?\
+Q6: Total Profit & Loss of the superstore and the Net Profit.
+
+Business Insights are presented at the end after the analysis of data.
