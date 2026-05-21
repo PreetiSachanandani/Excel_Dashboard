@@ -1,41 +1,123 @@
-# GLOBAL SUPERSTORE DATASET
+# 🛒 Global Superstore — Sales & Profit Dashboard in Excel
 
-## SALES AND PROFIT DASHBOARD IN EXCEL
+> An end-to-end Excel analytics project: data cleaning, transformation, business Q&A, and an interactive dashboard — built on the Global Superstore dataset.
 
-### Introduction 
-Superstores operate at a wide range of scales, from small retailers to large multinational chains, offering diverse products at competitive prices to customers around the world. To stay competitive and make strategic decisions, it’s crucial for these businesses to continuously track and evaluate key performance indicators (KPIs).\
-This project uses the Global Superstore Sales dataset, publicly available on Kaggle. The dataset includes transaction-level information across three product categories—Furniture, Office Supplies, and Technology—and three customer segments: Consumer, Corporate, and Home Office. These sales span multiple regions, providing a rich foundation for exploratory and analytical insights.
+![Dashboard Preview](Dashboard.png)
 
-### Objectives
-This portfolio project focuses on two core objectives:\
-Task 1: Clean, transform, and analyze the dataset to prepare it for meaningful exploration.\
-Task 2: Discover valuable and unexpected insights that address real business questions and support data‑driven recommendations.
+---
 
-### STEP1:
-The dataset contains 3 sheets: Orders, People and Returned Items. The sheets name People and Returned items have been merged using the VLOOKUP formula.
+## 📌 Project Overview
 
-### STEP2:
-In this task, data is being checked for null values and duplicate records. In Excel, both these tasks can be accomplished using ready functions available.\
-For checking duplicate entries, we need to navigate to Data tab and click on "Remove Duplicates", which shall prompt how many entries were duplicated. In this dataset, there were no duplicate entries were found.
+Superstores operate across vast geographies and product lines. To stay competitive, businesses need a clear, real-time view of their key performance indicators. This project takes raw transactional data and turns it into a decision-ready Excel dashboard — answering six critical business questions along the way.
 
+**Dataset:** Global Superstore Sales (Kaggle)  
+**Tool:** Microsoft Excel  
+**Skills demonstrated:** Data cleaning · VLOOKUP · Pivot Tables · Dashboard design · Business insight generation
 
-For checking NULL values, we need to use GO TO SPECIAL tab on the Home page under Find & Select tab. In this dataset, no records were found to be Null. \
-However, there were blanks in Postal Code and the codes were available for only a fraction of data, this column is best deleted.
+---
 
-### STEP3:
-Further, new column 'Year' , 'Month', 'Month_name' are added from the Order Date column to aid in analysis on yearly basis.\
-New Column : LOSS is added to the data to replace the negative Profit.\
-Remove columns: Postal Code and Row Number
+## 🗂️ Dataset Structure
 
-The data is now ready for the Questions.
+The workbook contains three sheets that were combined into a single analysis-ready table:
 
-## Business Questions
+| Sheet | Description |
+|---|---|
+| Orders | Transaction-level sales data across regions, categories, and segments |
+| People | Regional manager mapping |
+| Returned Items | Records of returned orders |
 
-Q1: Which segment is the bestseller?\
-Q2: Analysing sales profit by each Category over the years.\
-Q3: Which region has the highest order count and in which region do we need to grow our Business?\
-Q4: Analysing the data by Country.\
-Q5: What are the top 10 most selling Products?\
-Q6: Total Profit & Loss of the superstore and the Net Profit.
+The `People` and `Returned Items` sheets were merged into `Orders` using **VLOOKUP**.
 
-Business Insights are presented at the end after the analysis of data.
+---
+
+## 🧹 Data Cleaning Steps
+
+### Step 1 — Merge sheets
+Joined `People` and `Returned Items` into the main Orders table via VLOOKUP on the Order ID key.
+
+### Step 2 — Handle duplicates & nulls
+- **Duplicates:** Checked via *Data → Remove Duplicates* — none found.
+- **Null values:** Checked via *Home → Find & Select → Go To Special* — none found.
+- **Postal Code** column dropped: only a fraction of rows had valid codes; not useful for analysis.
+
+### Step 3 — Feature engineering
+New columns created to enable time-series and profitability analysis:
+
+| New Column | Derived From | Purpose |
+|---|---|---|
+| `Year` | Order Date | Year-over-year trend analysis |
+| `Month` | Order Date | Monthly seasonality |
+| `Month_name` | Order Date | Human-readable labels in charts |
+| `LOSS` | Profit (negatives) | Isolate loss-making transactions |
+
+**Removed:** `Postal Code`, `Row Number`
+
+---
+
+## ❓ Business Questions Answered
+
+| # | Question |
+|---|---|
+| Q1 | Which customer segment is the top revenue driver? |
+| Q2 | How does sales profit vary by category over the years? |
+| Q3 | Which region has the highest order count — and where should we focus growth? |
+| Q4 | How does performance break down by country? |
+| Q5 | What are the top 10 best-selling products? |
+| Q6 | What is the total profit, total loss, and net profit of the superstore? |
+
+---
+
+## 📊 Dashboard
+
+The interactive dashboard surfaces all six business questions in a single view, with slicers for **Year**, **Segment**, and **Category**.
+
+![Dashboard](Dashboard.png)
+
+### Key insights
+
+![Insights](Insights.png)
+
+### Profit & Loss breakdown
+
+![Profit](Profit.png)
+
+---
+
+## 💡 Key Findings
+
+- The **Consumer** segment consistently drives the highest order volume across all years.
+- **Technology** delivers the strongest profit margins despite lower order counts than Office Supplies.
+- Several regions show high revenue but negative net profit — indicating fulfilment or returns issues worth investigating.
+- A small cluster of products (~15% of SKUs) accounts for the majority of losses, suggesting a rationalisation opportunity.
+
+---
+
+## 🛠️ Tools & Techniques
+
+`Microsoft Excel` · `VLOOKUP` · `Pivot Tables` · `Pivot Charts` · `Slicers` · `Conditional Formatting` · `Power Query (basic)` · `Dashboard design`
+
+---
+
+## 📁 Files in This Repo
+
+| File | Description |
+|---|---|
+| `Global_Superstore2.xlsx` | Cleaned and analysis-ready workbook with dashboard |
+| `Dashboard.png` | Screenshot of the main dashboard |
+| `Insights.png` | Business insights summary view |
+| `Profit.png` | Profit & Loss breakdown chart |
+
+---
+
+## 👩‍💻 About Me
+
+I'm a data analytics professional specialising in the Microsoft data stack — Excel, Power BI, Microsoft Fabric, SQL, and Python/ML.
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/preeti-sachanandani)
+- 🐙 [GitHub](https://github.com/PreetiSachanandani)
+- 📬 Open to freelance data analytics projects on Upwork
+
+---
+
+*If this project was useful, consider giving it a ⭐ — it helps others discover it!*
+
