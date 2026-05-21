@@ -1,123 +1,66 @@
-# 🛒 Global Superstore — Sales & Profit Dashboard in Excel
+Global Superstore — Sales & Profit Dashboard in Excel
 
-> An end-to-end Excel analytics project: data cleaning, transformation, business Q&A, and an interactive dashboard — built on the Global Superstore dataset.
+An end-to-end Excel analytics project: data cleaning, transformation, business Q&A, and an interactive dashboard — built on the Global Superstore dataset.
 
-![Dashboard Preview](Dashboard.png)
+Show Image
 
----
-
-## 📌 Project Overview
-
+📌 Project Overview
 Superstores operate across vast geographies and product lines. To stay competitive, businesses need a clear, real-time view of their key performance indicators. This project takes raw transactional data and turns it into a decision-ready Excel dashboard — answering six critical business questions along the way.
+Dataset: Global Superstore Sales (Kaggle)
+Tool: Microsoft Excel
+Skills demonstrated: Data cleaning · VLOOKUP · Pivot Tables · Dashboard design · Business insight generation
 
-**Dataset:** Global Superstore Sales (Kaggle)  
-**Tool:** Microsoft Excel  
-**Skills demonstrated:** Data cleaning · VLOOKUP · Pivot Tables · Dashboard design · Business insight generation
-
----
-
-## 🗂️ Dataset Structure
-
+🗂️ Dataset Structure
 The workbook contains three sheets that were combined into a single analysis-ready table:
+SheetDescriptionOrdersTransaction-level sales data across regions, categories, and segmentsPeopleRegional manager mappingReturned ItemsRecords of returned orders
+The People and Returned Items sheets were merged into Orders using VLOOKUP.
 
-| Sheet | Description |
-|---|---|
-| Orders | Transaction-level sales data across regions, categories, and segments |
-| People | Regional manager mapping |
-| Returned Items | Records of returned orders |
+🧹 Data Cleaning Steps
+Step 1 — Merge sheets
+Joined People and Returned Items into the main Orders table via VLOOKUP on the Order ID key.
+Step 2 — Handle duplicates & nulls
 
-The `People` and `Returned Items` sheets were merged into `Orders` using **VLOOKUP**.
+Duplicates: Checked via Data → Remove Duplicates — none found.
+Null values: Checked via Home → Find & Select → Go To Special — none found.
+Postal Code column dropped: only a fraction of rows had valid codes; not useful for analysis.
 
----
-
-## 🧹 Data Cleaning Steps
-
-### Step 1 — Merge sheets
-Joined `People` and `Returned Items` into the main Orders table via VLOOKUP on the Order ID key.
-
-### Step 2 — Handle duplicates & nulls
-- **Duplicates:** Checked via *Data → Remove Duplicates* — none found.
-- **Null values:** Checked via *Home → Find & Select → Go To Special* — none found.
-- **Postal Code** column dropped: only a fraction of rows had valid codes; not useful for analysis.
-
-### Step 3 — Feature engineering
+Step 3 — Feature engineering
 New columns created to enable time-series and profitability analysis:
+New ColumnDerived FromPurposeYearOrder DateYear-over-year trend analysisMonthOrder DateMonthly seasonalityMonth_nameOrder DateHuman-readable labels in chartsLOSSProfit (negatives)Isolate loss-making transactions
+Removed: Postal Code, Row Number
 
-| New Column | Derived From | Purpose |
-|---|---|---|
-| `Year` | Order Date | Year-over-year trend analysis |
-| `Month` | Order Date | Monthly seasonality |
-| `Month_name` | Order Date | Human-readable labels in charts |
-| `LOSS` | Profit (negatives) | Isolate loss-making transactions |
+❓ Business Questions Answered
+#QuestionQ1Which customer segment is the top revenue driver?Q2How does sales profit vary by category over the years?Q3Which region has the highest order count — and where should we focus growth?Q4How does performance break down by country?Q5What are the top 10 best-selling products?Q6What is the total profit, total loss, and net profit of the superstore?
 
-**Removed:** `Postal Code`, `Row Number`
+📊 Dashboard
+The interactive dashboard surfaces all six business questions in a single view, with slicers for Year, Segment, and Category.
+Show Image
+Key insights
+Show Image
+Profit & Loss breakdown
+Show Image
 
----
+💡 Key Findings
 
-## ❓ Business Questions Answered
+The Consumer segment consistently drives the highest order volume across all years.
+Technology delivers the strongest profit margins despite lower order counts than Office Supplies.
+Several regions show high revenue but negative net profit — indicating fulfilment or returns issues worth investigating.
+A small cluster of products (~15% of SKUs) accounts for the majority of losses, suggesting a rationalisation opportunity.
 
-| # | Question |
-|---|---|
-| Q1 | Which customer segment is the top revenue driver? |
-| Q2 | How does sales profit vary by category over the years? |
-| Q3 | Which region has the highest order count — and where should we focus growth? |
-| Q4 | How does performance break down by country? |
-| Q5 | What are the top 10 best-selling products? |
-| Q6 | What is the total profit, total loss, and net profit of the superstore? |
 
----
+🛠️ Tools & Techniques
+Microsoft Excel · VLOOKUP · Pivot Tables · Pivot Charts · Slicers · Conditional Formatting · Power Query (basic) · Dashboard design
 
-## 📊 Dashboard
+📁 Files in This Repo
+FileDescriptionGlobal_Superstore2.xlsxCleaned and analysis-ready workbook with dashboardDashboard.pngScreenshot of the main dashboardInsights.pngBusiness insights summary viewProfit.pngProfit & Loss breakdown chart
 
-The interactive dashboard surfaces all six business questions in a single view, with slicers for **Year**, **Segment**, and **Category**.
-
-![Dashboard](Dashboard.png)
-
-### Key insights
-
-![Insights](Insights.png)
-
-### Profit & Loss breakdown
-
-![Profit](Profit.png)
-
----
-
-## 💡 Key Findings
-
-- The **Consumer** segment consistently drives the highest order volume across all years.
-- **Technology** delivers the strongest profit margins despite lower order counts than Office Supplies.
-- Several regions show high revenue but negative net profit — indicating fulfilment or returns issues worth investigating.
-- A small cluster of products (~15% of SKUs) accounts for the majority of losses, suggesting a rationalisation opportunity.
-
----
-
-## 🛠️ Tools & Techniques
-
-`Microsoft Excel` · `VLOOKUP` · `Pivot Tables` · `Pivot Charts` · `Slicers` · `Conditional Formatting` · `Power Query (basic)` · `Dashboard design`
-
----
-
-## 📁 Files in This Repo
-
-| File | Description |
-|---|---|
-| `Global_Superstore2.xlsx` | Cleaned and analysis-ready workbook with dashboard |
-| `Dashboard.png` | Screenshot of the main dashboard |
-| `Insights.png` | Business insights summary view |
-| `Profit.png` | Profit & Loss breakdown chart |
-
----
-
-## 👩‍💻 About Me
-
+👩‍💻 About Me
 I'm a data analytics professional specialising in the Microsoft data stack — Excel, Power BI, Microsoft Fabric, SQL, and Python/ML.
 
-- 💼 [LinkedIn](https://www.linkedin.com/in/preeti-sachanandani)
-- 🐙 [GitHub](https://github.com/PreetiSachanandani)
-- 📬 Open to freelance data analytics projects on Upwork
+💼 LinkedIn
+🐙 GitHub
+📬 Open to freelance data analytics projects on Upwork
 
----
 
-*If this project was useful, consider giving it a ⭐ — it helps others discover it!*
+If this project was useful, consider giving it a ⭐ — it helps others discover it!
 
