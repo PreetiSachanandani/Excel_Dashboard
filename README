@@ -2,12 +2,16 @@ Global Superstore — Sales & Profit Dashboard in Excel
 
 An end-to-end Excel analytics project: data cleaning, transformation, business Q&A, and an interactive dashboard — built on the Global Superstore dataset.
 
-Show Image
+
 
 📌 Project Overview
 Superstores operate across vast geographies and product lines. To stay competitive, businesses need a clear, real-time view of their key performance indicators. This project takes raw transactional data and turns it into a decision-ready Excel dashboard — answering six critical business questions along the way.
+
+
 Dataset: Global Superstore Sales (Kaggle)
 Tool: Microsoft Excel
+
+
 Skills demonstrated: Data cleaning · VLOOKUP · Pivot Tables · Dashboard design · Business insight generation
 
 🗂️ Dataset Structure
